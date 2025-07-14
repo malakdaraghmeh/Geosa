@@ -1,5 +1,5 @@
 /* ✅ الخلفية الكاملة */
-.background {
+/* .background {
   width: 100vw;
   height: 100vh;
   background-image: url('/assets/images/footer-bg.png');
@@ -9,6 +9,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
+} */
+.background {
+  width: 100vw;
+  height: 100vh;
+  background-color: aqua;
+  background-image: url('/assets/images/footer-bg.png');
+  background-size: cover;
+  background-position: center;
+  
+  /* ✅ أهم شيء: نخلي المحتوى عمودي */
+  display: flex;
+  flex-direction: column; /* ✅ بدل row */
+  align-items: center;
+  justify-content: center;
+  gap: 2rem; /* مسافة بين المحتوى والفوتر */
 }
 
 /* ✅ توزيع المكونات داخل الصفحة */
@@ -37,4 +52,12 @@
 .logo {
   max-width: 80%;
   height: auto;
+}
+/* ✅ الفوتر داخل الخلفية لكن بشكل مستقل */
+.footer-overlay {
+  width: 100%;
+  max-width: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
 }
