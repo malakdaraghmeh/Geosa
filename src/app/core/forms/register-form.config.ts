@@ -35,6 +35,12 @@ export const REGISTER_FIELDS = [
     value: '',
   },
   {
+  id: 'confirmPassword',
+  label: 'تأكيد كلمة المرور',
+  type: 'password',
+  required: true
+},
+  {
     id: 'userType',
     type: 'select',
     label: 'نوع المستخدم',

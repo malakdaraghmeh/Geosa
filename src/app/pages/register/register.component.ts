@@ -9,6 +9,9 @@ import {
 import { RegisterController } from '../../core/controllers/register.controller';
 import { RegisterModel } from '../../core/models/register.model';
 import { REGISTER_FIELDS } from '../../core/forms/register-form.config';
+import { phoneNumberValidator } from '../../core/validators/phone.validator';
+import { strictEmailValidator } from '../../core/validators/email.validator';
+import { matchPasswordValidator } from '../../core/validators/match-password.validator';
 
 @Component({
   selector: 'app-register',
@@ -26,15 +29,34 @@ export class RegisterComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const group: any = {};
-    REGISTER_FIELDS.forEach((field) => {
-      group[field.id] = [
-        field.type === 'checkbox' ? field.value ?? false : field.value ?? '',
-        field.required ? Validators.required : [],
-      ];
-    });
-    this.registerForm = this.fb.group(group);
-  }
+  const group: any = {};
+
+  REGISTER_FIELDS.forEach((field) => {
+    const validators = [];
+
+    if (field.required) {
+      validators.push(Validators.required);
+    }
+
+    if (field.id === 'phoneNumber') {
+      validators.push(phoneNumberValidator('SA'));
+    }
+
+    if (field.id === 'email') {
+      validators.push(strictEmailValidator());
+    }
+
+    group[field.id] = [
+      field.type === 'checkbox' ? field.value ?? false : field.value ?? '',
+      validators,
+    ];
+  });
+
+  this.registerForm = this.fb.group(group, {
+    validators: matchPasswordValidator('password', 'confirmPassword'),
+  });
+}
+
 
   onSubmit() {
     if (this.registerForm.invalid) {
