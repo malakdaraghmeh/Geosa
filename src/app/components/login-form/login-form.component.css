@@ -1,0 +1,77 @@
+.login-box {
+    background: #fff;
+    padding: 2.5rem;
+    border-radius: 10px;
+    width: 100%;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    font-family: 'Segoe UI', sans-serif;
+    direction: rtl;
+    text-align: right;
+  }
+  
+  .login-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  
+  .login-header a {
+    text-decoration: none;
+    color: #000;
+  }
+  
+  .login-header a strong {
+    color: #2c8d7f;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #212121;
+    font-weight: bold;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  input {
+    padding: 12px;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+  
+  .forgot-password {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  button {
+    padding: 12px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .note {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: #777;
+  }
+  

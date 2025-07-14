@@ -1,0 +1,45 @@
+/* ✅ الخلفية تغطي كامل الشاشة */
+.background {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('/assets/images/footer-bg.png'); /* الخلفية */
+    background-color: aqua;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* ✅ الحاوية الرئيسية تقسم الصفحة بين الفورم والشعار */
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1300px;
+    padding: 2rem;
+  }
+  
+  /* ✅ صندوق الفورم على اليسار */
+  .form-container {
+    width: 45%;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* ✅ شعار الهيئة */
+  .logo-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logo {
+    max-width: 80%;
+    height: auto;
+  }
+  
