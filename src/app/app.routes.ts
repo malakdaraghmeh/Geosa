@@ -4,6 +4,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
+import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 
 export const routes: Routes = [
   {
@@ -18,8 +19,10 @@ export const routes: Routes = [
     path: '',
     component: MainLayoutComponent,
     children: [
-      { path: PATHS.HOME, component: HomeComponent, data: { breadcrumb: 'Home' } },
+      { path: PATHS.HOME, component: HomeComponent, data: { breadcrumb: 'Home' }},
+    
     ]
   },
-  { path: '**', redirectTo: PATHS.LOGIN }
+  
+  { path: PATHS.NOT_FOUND, component: NotFoundPageComponent }
 ];

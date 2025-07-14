@@ -31,36 +31,37 @@ export class BreadcrumbComponent implements OnDestroy {
   }
 
   private buildBreadcrumbs(route: ActivatedRoute, url: string = '', breadcrumbs: Breadcrumb[] = []): Breadcrumb[] {
-    const children = route.children;
+  const children = route.children;
 
-    if (children.length === 0) {
-      return breadcrumbs;
-    }
-
-    for (const child of children) {
-      if (child.outlet !== PRIMARY_OUTLET) {
-        continue; 
-      }
-
-      const routeURL = child.snapshot.url.map(segment => segment.path).join('/');
-      if (routeURL) {
-        url += `/${routeURL}`;
-      }
-
-      let label = child.snapshot.data['breadcrumb'];
-      if (!label) {
-        label = this.formatLabel(routeURL);
-      }
-
-      if (label) {
-        breadcrumbs.push({ label, url });
-      }
-
-      return this.buildBreadcrumbs(child, url, breadcrumbs);
-    }
-
+  if (children.length === 0) {
     return breadcrumbs;
   }
+
+  for (const child of children) {
+    if (child.outlet !== PRIMARY_OUTLET) {
+      continue;
+    }
+
+    const routeURL = child.snapshot.url.map(segment => segment.path).join('/');
+    if (routeURL) {
+      url += `/${routeURL}`;
+    }
+
+    let label = child.snapshot.data['breadcrumb'];
+    if (!label) {
+      label = this.formatLabel(routeURL);
+    }
+
+    if (label) {
+      breadcrumbs.push({ label, url });
+    }
+
+    breadcrumbs = this.buildBreadcrumbs(child, url, breadcrumbs);
+  }
+
+  return breadcrumbs;
+}
+
 
   private formatLabel(pathSegment: string): string {
     if (!pathSegment) return '';
