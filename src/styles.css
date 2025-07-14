@@ -1,1 +1,57 @@
-*{font-family: 'Cairo', sans-serif;}
+/* الخط المستخدم */
+* {
+    font-family: 'Cairo', sans-serif;
+  }
+  
+  /* توست النجاح */
+  .toast-success {
+    background-color: #2D6973 !important;
+    color: #fff;
+    border-left: 5px solid #28a745;
+    font-size: 15px;
+    direction: rtl;
+  }
+  
+  /* توست الخطأ */
+  .toast-error {
+    background-color: #fff3f3 !important;
+    color: #dc3545;
+    border-left: 5px solid #dc3545;
+    direction: rtl;
+  }
+  
+  /* عنوان التوست */
+  .toast-title {
+    font-weight: bold;
+  }
+  
+  /* التوست نفسه */
+  .toast {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 12px !important;
+    padding: 1rem !important;
+    max-width: 600px !important;        
+    width: auto !important;             
+    display: inline-block !important;   
+    word-wrap: break-word;
+    margin: 10px;
+    direction: rtl;
+  }
+  
+
+  .toast-top-right {
+    top: 1rem;
+    right: 1rem;
+    left: auto !important;
+    position: fixed !important;
+    z-index: 9999;
+  }
+  
+  .toast-container {
+    width: auto !important;
+    max-width: 100%;
+    position: fixed;
+    z-index: 9999;
+    pointer-events: none;
+  }
+  

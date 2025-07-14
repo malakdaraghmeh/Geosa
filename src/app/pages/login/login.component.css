@@ -1,63 +1,44 @@
-/* ✅ الخلفية الكاملة */
-/* .background {
-  width: 100vw;
-  height: 100vh;
-  background-image: url('/assets/images/footer-bg.png');
-  background-color: aqua;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
+/* تنسيق الخلفية العامة */
 .background {
-  width: 100vw;
-  height: 100vh;
-  background-color: aqua;
-  background-image: url('/assets/images/footer-bg.png');
-  background-size: cover;
-  background-position: center;
-  
-  /* ✅ أهم شيء: نخلي المحتوى عمودي */
+  min-height: 100vh;
+  background: radial-gradient(ellipse at center, #002f4b 0%, #005f73 100%);
   display: flex;
-  flex-direction: column; /* ✅ بدل row */
-  align-items: center;
-  justify-content: center;
-  gap: 2rem; /* مسافة بين المحتوى والفوتر */
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-/* ✅ توزيع المكونات داخل الصفحة */
+/* الحاوية الرئيسية */
 .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
-  max-width: 1300px;
+  flex: 1;
   padding: 2rem;
 }
 
-/* ✅ حاوية الفورم */
+/* العمود الأيسر للفورم */
 .form-container {
-  width: 45%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* ✅ حاوية الشعار */
+/* العمود الأيمن للشعار */
 .logo-container {
-  width: 50%;
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.logo {
-  max-width: 80%;
+.logo-container img.logo {
+  max-width: 100%;
   height: auto;
 }
-/* ✅ الفوتر داخل الخلفية لكن بشكل مستقل */
+
+/* الفوتر */
 .footer-overlay {
-  width: 100%;
-  max-width: none;
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.05);
 }

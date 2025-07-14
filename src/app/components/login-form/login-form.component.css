@@ -1,36 +1,72 @@
-.login-box {
-    background: #fff;
-    padding: 2.5rem 2rem;
+/* خلفية الصفحة */
+body {
+    font-family: 'Cairo', sans-serif;
+    margin: 0;
+    padding: 2rem;
+    background: radial-gradient(ellipse at center, #002f4b 0%, #005f73 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* حاوية مركزية */
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  /* صندوق تسجيل الدخول */
+  .login-box {
+    background: #FFFFFF;
+    padding: 2rem 2.5rem;
     border-radius: 12px;
     width: 100%;
-    max-width: 460px; /* ✅ العرض المناسب */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-    font-family: 'Segoe UI', sans-serif;
-    direction: ltr;
-    text-align: left;
-    margin: 0 auto;
+    max-width: 720px; /* ✅ أكبر عرض */
+    min-height: auto; /* ✅ تقليل الارتفاع */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    direction: rtl;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   
+  /* الهيدر أعلى الفورم */
   .login-header {
     display: flex;
-    justify-content: flex-end; /* ✅ لإظهار login على اليمين */
+    justify-content: flex-start;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 1.2rem;
+    gap: 20px; /* مسافة بين الروابط */
+    margin-bottom: 1.5rem;
     font-size: 1rem;
   }
+
   
   .login-header a {
+    /* text-decoration: none;
+    color: #2D6973;
+    font-weight: 500; */
     text-decoration: none;
-    color: #000;
-    font-weight: 500;
+  color: #2D6973;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  }
+  .header-login-link:hover{
+    background-color: #1a73e8;     /* اختياري: لون خفيف بالخلفية */
+    cursor: pointer;
   }
   
   .login-header a strong {
-    color: #2c8d7f;
+    color: #198754; /* لون "نفاذ" أخضر */
     font-weight: bold;
   }
   
+  /* عنوان تسجيل الدخول */
   .title {
     font-size: 1.7rem;
     margin-bottom: 1.5rem;
@@ -39,11 +75,13 @@
     text-align: center;
   }
   
+  /* تنسيق الفورم */
   form {
     display: flex;
     flex-direction: column;
   }
   
+  /* الحقول */
   input {
     padding: 14px;
     margin-bottom: 1.2rem;
@@ -55,34 +93,42 @@
   }
   
   input:focus {
-    border-color: #007bff;
+    border-color: #2D6973;
     outline: none;
     background-color: #fff;
   }
   
+  input::placeholder {
+    color: #aaa;
+    font-weight: 400;
+  }
+  
+  /* "هل نسيت كلمة المرور؟" لليسار */
   .forgot-password {
     margin-bottom: 1rem;
     font-size: 0.9rem;
     text-decoration: none;
-    color: #007bff;
-    text-align: right;
+    color: #2D6973;
+    text-align: left;
   }
   
+  /* زر الدخول */
   button {
     padding: 14px;
     font-size: 1rem;
-    background-color: #007bff;
+    background-color: #2D6973;
     color: white;
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: background-color 0.3s;
   }
   
   button:hover {
-    background-color: #0056b3;
+    background-color: #1a73e8; /* أزرق جميل عند المرور */
   }
   
+  /* النص أسفل الفورم */
   .note {
     margin-top: 1.5rem;
     font-size: 0.85rem;

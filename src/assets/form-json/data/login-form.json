@@ -1,0 +1,25 @@
+[
+    {
+      "input": "text",
+      "id": "username",
+      "labelText": "User Name",
+      "value": "",
+      "isRequired": true,
+      "data": [],
+      "error": "This field is required",
+      "isChecked": false,
+      "isHidden": false
+    },
+    {
+      "input": "password",
+      "id": "password",
+      "labelText": "Password",
+      "value": "",
+      "isRequired": true,
+      "data": [],
+      "error": "This field is required",
+      "isChecked": false,
+      "isHidden": false
+    }
+  ]
+  
