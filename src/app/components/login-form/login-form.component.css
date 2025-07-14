@@ -1,37 +1,42 @@
 .login-box {
     background: #fff;
-    padding: 2.5rem;
-    border-radius: 10px;
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
     width: 100%;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    max-width: 460px; /* ✅ العرض المناسب */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
     font-family: 'Segoe UI', sans-serif;
-    direction: rtl;
-    text-align: right;
+    direction: ltr;
+    text-align: left;
+    margin: 0 auto;
   }
   
   .login-header {
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end; /* ✅ لإظهار login على اليمين */
     align-items: center;
-    gap: 10px;
-    margin-bottom: 1rem;
+    gap: 12px;
+    margin-bottom: 1.2rem;
     font-size: 1rem;
   }
   
   .login-header a {
     text-decoration: none;
     color: #000;
+    font-weight: 500;
   }
   
   .login-header a strong {
     color: #2c8d7f;
+    font-weight: bold;
   }
   
   .title {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     margin-bottom: 1.5rem;
-    color: #212121;
+    color: #1d1d1d;
     font-weight: bold;
+    text-align: center;
   }
   
   form {
@@ -40,11 +45,19 @@
   }
   
   input {
-    padding: 12px;
-    margin-bottom: 1rem;
+    padding: 14px;
+    margin-bottom: 1.2rem;
     border-radius: 6px;
     border: 1px solid #ccc;
     font-size: 1rem;
+    background-color: #f9f9f9;
+    transition: border-color 0.2s;
+  }
+  
+  input:focus {
+    border-color: #007bff;
+    outline: none;
+    background-color: #fff;
   }
   
   .forgot-password {
@@ -52,10 +65,11 @@
     font-size: 0.9rem;
     text-decoration: none;
     color: #007bff;
+    text-align: right;
   }
   
   button {
-    padding: 12px;
+    padding: 14px;
     font-size: 1rem;
     background-color: #007bff;
     color: white;
@@ -70,8 +84,9 @@
   }
   
   .note {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     font-size: 0.85rem;
     color: #777;
+    text-align: center;
   }
   
