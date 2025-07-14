@@ -1,22 +1,25 @@
 import { Routes } from '@angular/router';
-import { LoginComponent } from '../app/pages/login/login.component';
 import { PATHS } from './core/utils/paths';
+import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
+import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
+import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
 
 export const routes: Routes = [
   {
-    path: PATHS.ROOT,
-    redirectTo: PATHS.LOGIN,
-    pathMatch: 'full',
+    path: '',
+    component: AuthLayoutComponent, 
+    children: [
+      { path: '', redirectTo: PATHS.LOGIN, pathMatch: 'full' },
+      { path: PATHS.LOGIN, component: LoginComponent },
+    ]
   },
   {
-    path: PATHS.LOGIN,
-    component: LoginComponent,
-    data: { breadcrumb: 'Login' },
+    path: '',
+    component: MainLayoutComponent,
+    children: [
+      { path: PATHS.HOME, component: HomeComponent, data: { breadcrumb: 'Home' } },
+    ]
   },
-  {
-    path: PATHS.HOME,
-    component: HomeComponent,
-    data: { breadcrumb: 'Home' },
-  },
+  { path: '**', redirectTo: PATHS.LOGIN }
 ];
