@@ -1,26 +1,40 @@
 <div class="register-container">
-    <h2>تسجيل الدخول</h2>
-    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-        <div class="form-group">
-            <label for="fullName">Full Name</label>
-            <input id="fullName" type="text" formControlName="fullName" />
-        </div>
+  <h2>إنشاء حساب جديد</h2>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <ng-container *ngFor="let field of fields">
+      <label *ngIf="!field.hidden">
+        {{ field.label }}:
 
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input id="email" type="email" formControlName="email" />
-        </div>
+        <input
+          *ngIf="field.type !== 'select' && field.type !== 'checkbox'"
+          [type]="field.type"
+          [formControlName]="field.id"
+        />
 
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input id="password" type="password" formControlName="password" />
-        </div>
+        <select *ngIf="field.type === 'select'" [formControlName]="field.id">
+          <option *ngFor="let opt of field.options" [value]="opt.value">
+            {{ opt.text }}
+          </option>
+        </select>
 
-        <div class="form-group">
-            <label for="confirmPassword">Confirm Password</label>
-            <input id="confirmPassword" type="password" formControlName="confirmPassword" />
-        </div>
+        <input
+          *ngIf="field.type === 'checkbox'"
+          type="checkbox"
+          [formControlName]="field.id"
+        />
 
-        <button type="submit" [disabled]="registerForm.invalid">Register</button>
-    </form>
+        <span
+          class="error"
+          *ngIf="
+            registerForm.get(field.id)?.invalid &&
+            registerForm.get(field.id)?.touched
+          "
+        >
+          {{ field.label }} مطلوب
+        </span>
+      </label>
+    </ng-container>
+
+    <button type="submit" [disabled]="registerForm.invalid">تسجيل</button>
+  </form>
 </div>
