@@ -1,1 +1,12 @@
-<p>add-device works!</p>
+<form [formGroup]="deviceForm" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+        <div class="form-group" *ngFor="let field of fields">
+            <label>{{ field.label }}</label>
+            <input [type]="field.type" [formControlName]="field.id" [required]="field.required" />
+        </div>
+    </div>
+
+    <div class="button-row">
+        <button type="submit" [disabled]="deviceForm.invalid">إضافة </button>
+    </div>
+</form>

@@ -29,7 +29,7 @@ export const routes: Routes = [
 
       { path: PATHS.HOME, component: HomeComponent, data: { breadcrumb: 'Home' }},
       { path: PATHS.PROFILE, component: UserProfileComponent, data: { breadcrumb: 'الملف الشخصي' }},
-          { path: PATHS.ADD_DEVICE, component: AddDeviceComponent, data: { breadcrumb: ' add device' }},
+      { path: PATHS.ADD_DEVICE, component: AddDeviceComponent, data: { breadcrumb: ' add device' }},
 
     ]
 
