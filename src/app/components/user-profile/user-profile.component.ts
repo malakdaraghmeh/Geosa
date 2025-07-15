@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserProfileModel } from '../../controllers/userProfileModel/user-profile.model';
+import { UserProfileModel } from '../../core/models/userProfileModel/user-profile.model';
 import { UserController } from '../../core/controllers/user.controller';
 
 
