@@ -1,0 +1,21 @@
+<div class="login-wrapper">
+    <div class="top-bar">
+      <span class="option active">Login</span>
+      <span class="option">Login via <span class="nafath">Nafath</span></span>
+    </div>
+  
+    <div class="login-box">
+      <h2>Login</h2>
+  
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <input type="text" formControlName="username" placeholder="Username" />
+        <input type="password" formControlName="password" placeholder="Password" />
+        <a class="forgot" href="#">Forgot your password?</a>
+  
+        <button type="submit" [disabled]="loginForm.invalid">Login</button>
+      </form>
+  
+      <p class="footer">Nafath Login Form</p>
+    </div>
+  </div>
+  

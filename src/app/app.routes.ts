@@ -32,4 +32,5 @@ export const routes: Routes = [
   },
 
   { path: PATHS.NOT_FOUND, component: NotFoundPageComponent },
+
 ];
