@@ -1,0 +1,62 @@
+nav {
+    margin: 1rem 0;
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+}
+
+.breadcrumb {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+}
+
+.breadcrumb-item {
+    color: #6c757d;
+    /* gray by default */
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    content: "›";
+    /* separator */
+    padding: 0 0.5rem;
+    color: #adb5bd;
+    /* light gray */
+    font-weight: bold;
+}
+
+/* All breadcrumb links except last one */
+.breadcrumb-item a {
+    text-decoration: none;
+    color: #6c757d;
+    /* gray links */
+    transition: color 0.3s ease;
+}
+
+.breadcrumb-item a:hover {
+    text-decoration: underline;
+    color: #343a40;
+    /* darker on hover */
+}
+
+/* The last breadcrumb item: blue and clickable */
+.breadcrumb-item.active,
+.breadcrumb-item.active a {
+    color: #007bff;
+    /* bootstrap blue */
+    font-weight: 600;
+    pointer-events: auto;
+    /* clickable */
+    cursor: pointer;
+}
+
+/* On hover for active breadcrumb link */
+.breadcrumb-item.active a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+    /* darker blue */
+}

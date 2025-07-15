@@ -1,0 +1,44 @@
+/* تنسيق الخلفية العامة */
+.background {
+  min-height: 100vh;
+  background: radial-gradient(ellipse at center, #002f4b 0%, #005f73 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* الحاوية الرئيسية */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  padding: 2rem;
+}
+
+/* العمود الأيسر للفورم */
+.form-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* العمود الأيمن للشعار */
+.logo-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-container img.logo {
+  max-width: 100%;
+  height: auto;
+}
+
+/* الفوتر */
+.footer-overlay {
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.05);
+}

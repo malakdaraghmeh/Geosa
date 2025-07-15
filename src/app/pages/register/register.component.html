@@ -1,0 +1,65 @@
+<div class="register-container">
+  <h2>إنشاء حساب جديد</h2>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <ng-container *ngFor="let field of fields">
+      <label *ngIf="!field.hidden">
+        {{ field.label }}:
+
+        <input
+          *ngIf="field.type !== 'select' && field.type !== 'checkbox'"
+          [type]="field.type"
+          [formControlName]="field.id"
+        />
+        <select *ngIf="field.type === 'select'" [formControlName]="field.id">
+          <option *ngFor="let opt of field.options" [value]="opt.value">
+            {{ opt.text }}
+          </option>
+        </select>
+        <input
+          *ngIf="field.type === 'checkbox'"
+          type="checkbox"
+          [formControlName]="field.id"
+        />
+        <span
+          class="error"
+          *ngIf="
+            registerForm.get(field.id)?.touched &&
+            registerForm.get(field.id)?.invalid
+          "
+        >
+          <span *ngIf="registerForm.get(field.id)?.errors?.['required']">
+            {{ field.label }} مطلوب
+          </span>
+          <span
+            *ngIf="
+    field.id === 'confirmPassword' &&
+    registerForm.get('confirmPassword')?.touched &&
+    registerForm.get('confirmPassword')?.errors?.['passwordMismatch']
+  "
+          >
+            كلمة المرور لا تتطابق
+          </span>
+          <span
+            *ngIf="
+              field.id === 'phoneNumber' &&
+              registerForm.get(field.id)?.errors?.['invalidPhoneNumber']
+            "
+          >
+            رقم الهاتف غير صحيح للسعودية
+          </span>
+
+          <span
+            *ngIf="
+              field.id === 'email' &&
+              registerForm.get(field.id)?.errors?.['invalidEmail']
+            "
+          >
+            البريد الإلكتروني غير صالح (مثال: example&#64;gmail.com)
+          </span>
+        </span>
+      </label>
+    </ng-container>
+
+    <button type="submit" [disabled]="registerForm.invalid">تسجيل</button>
+  </form>
+</div>

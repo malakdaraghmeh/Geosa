@@ -1,0 +1,36 @@
+
+<div class="login-box" dir="rtl">
+    <div class="login-header">
+      <a href="#" class="header-login-link">تسجيل الدخول</a>
+     
+      <a href="#">تسجيل دخول عبر <strong>نفاذ</strong></a>
+    </div>
+  
+    <h2 class="title">تسجيل الدخول</h2>
+  
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm" autocomplete="off">
+        <input
+          type="text"
+          autocomplete="new-username"
+          name="username"
+          placeholder="اسم المستخدم"
+          [(ngModel)]="username"
+          required
+        />
+        <input
+          type="password"
+          autocomplete="new-password"
+          name="password"
+          placeholder="كلمة المرور"
+          [(ngModel)]="password"
+          required
+        />
+        <a href="#" class="forgot-password">هل نسيت كلمة المرور؟</a>
+        <button type="submit" [disabled]="loginForm.invalid">دخول</button>
+      </form>
+      
+  
+    <p class="note">تسجيل الدخول عبر نفاذ</p>
+  </div>
+
+  
