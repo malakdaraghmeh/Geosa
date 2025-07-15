@@ -3,9 +3,7 @@
 
     <div class="auth-container">
         <div *ngIf="showTabs" class="tabs">
-            <button (click)="onSwitchTab('login')" [class.active]="activeTab === 'login'">
-                تسجيل الدخول
-            </button>
+            <button (click)="onSwitchTab('login')" [class.active]="activeTab === 'login'">تسجيل الدخول</button>
             <button (click)="onSwitchTab('nafath')" [class.active]="activeTab === 'nafath'">
                 تسجيل الدخول عبر <span class="nafath-highlight">نفاذ</span>
             </button>

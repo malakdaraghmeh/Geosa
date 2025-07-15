@@ -13,6 +13,7 @@ import { phoneNumberValidator } from '../../core/validators/phone.validator';
 import { strictEmailValidator } from '../../core/validators/email.validator';
 import { matchPasswordValidator } from '../../core/validators/match-password.validator';
 import { AuthLayoutComponent } from "../../shared/auth-layout/auth-layout.component";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -26,7 +27,8 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private registerController: RegisterController
+    private registerController: RegisterController,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -81,4 +83,17 @@ export class RegisterComponent implements OnInit {
       },
     });
   }
+onSwitchTabHandler = (tab: 'login' | 'nafath' ) => {
+  switch (tab) {
+    case 'login':
+      this.router.navigate(['/login']);
+      break;
+    case 'nafath':
+      this.router.navigate(['/nafath-login']);
+      break;
+   
+  }
+};
+
+
 }

@@ -63,8 +63,9 @@
 
 <app-auth-layout
   [title]="'إنشاء حساب جديد'"
-  [activeTab]="'login'"
-  [showTabs]="false"
+  [activeTab]="'register'"
+  [showTabs]="true"
   [contentTemplate]="registerTemplate"
+  [onSwitchTab]="onSwitchTabHandler"
 >
 </app-auth-layout>

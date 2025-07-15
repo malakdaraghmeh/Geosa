@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component,Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
 
@@ -8,14 +8,16 @@ import { HttpClient } from '@angular/common/http';
   imports: [CommonModule],
   standalone: true,
   templateUrl: './auth-layout.component.html',
-  styleUrls: ['./auth-layout.component.css']
+  styleUrls: ['./auth-layout.component.css'],
 })
 export class AuthLayoutComponent {
- @Input() activeTab: 'login' | 'nafath' = 'login';
+  @Input() activeTab: 'login' | 'nafath' | 'register' | 'forgot' = 'login';
   @Input() title = 'عنوان';
   @Input() showTabs = true;
   @Input() contentTemplate: any;
-  @Input() onSwitchTab!: (tab: 'login' | 'nafath') => void;
+  @Input() onSwitchTab!: (
+    tab: 'login' | 'nafath' 
+  ) => void;
   svgContent: SafeHtml = '';
 
   constructor(private http: HttpClient, private sanitizer: DomSanitizer) {
@@ -24,10 +26,10 @@ export class AuthLayoutComponent {
 
   loadSvg() {
     this.http.get('assets/svg/logo.svg', { responseType: 'text' }).subscribe(
-      svg => {
+      (svg) => {
         this.svgContent = this.sanitizer.bypassSecurityTrustHtml(svg);
       },
-      err => {
+      (err) => {
         console.error('Error loading SVG:', err);
       }
     );
