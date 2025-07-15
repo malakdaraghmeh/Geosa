@@ -1,0 +1,20 @@
+<div class="auth-wrapper">
+    <div [innerHTML]="svgContent" class="logo-container"></div>
+
+    <div class="auth-container">
+        <div *ngIf="showTabs" class="tabs">
+            <button (click)="onSwitchTab('login')" [class.active]="activeTab === 'login'">
+                تسجيل الدخول
+            </button>
+            <button (click)="onSwitchTab('nafath')" [class.active]="activeTab === 'nafath'">
+                تسجيل الدخول عبر <span class="nafath-highlight">نفاذ</span>
+            </button>
+        </div>
+
+        <h2 class="auth-title">{{ title }}</h2>
+
+        <ng-container *ngTemplateOutlet="contentTemplate"></ng-container>
+
+        <div class="footer">جميع الحقوق محفوظة لمنصة متر ٢٠٢٥.</div>
+    </div>
+</div>

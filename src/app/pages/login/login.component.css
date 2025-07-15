@@ -1,7 +1,7 @@
 /* تنسيق الخلفية العامة */
 .background {
   min-height: 100vh;
-  background: radial-gradient(ellipse at center, #002f4b 0%, #005f73 100%);
+  background:#2d6973;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

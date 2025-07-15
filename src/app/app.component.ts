@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { LoginFormComponent } from './components/login-form/login-form.component';
+import {MatIconModule} from '@angular/material/icon'
 
 @Component({
   selector: 'app-root',

@@ -1,0 +1,106 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to right, #2d6973, #3d8a97);
+  padding: 20px;
+  direction: rtl;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.auth-container {
+  background-color: #ffffff;
+  max-width: 420px;
+  width: 100%;
+  padding: 40px 35px;
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.auth-title {
+  text-align: center;
+  margin-bottom: 24px;
+  color: black;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 6px;
+}
+
+.tabs button {
+  background: none;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 1px 10px;
+  color: #666;
+}
+
+.tabs button.active {
+  color: #2d6973;
+  background-color: #cfcfcf;
+  border-radius: 5px;
+  padding: 4px 10px;
+}
+
+.nafath-highlight {
+    color: #3f9e78;
+    font-weight: 800;
+} 
+.footer {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 12px;
+  color: #777;
+}
+.auth-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .auth-wrapper {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo-container {
+        max-width: 300px;
+        margin-left: 40px;
+    }
+
+    .auth-container {
+        max-width: 420px;
+    }
+}
+
+.logo-container svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}

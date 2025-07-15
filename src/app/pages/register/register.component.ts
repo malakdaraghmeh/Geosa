@@ -12,10 +12,11 @@ import { REGISTER_FIELDS } from '../../core/forms/register-form.config';
 import { phoneNumberValidator } from '../../core/validators/phone.validator';
 import { strictEmailValidator } from '../../core/validators/email.validator';
 import { matchPasswordValidator } from '../../core/validators/match-password.validator';
+import { AuthLayoutComponent } from "../../shared/auth-layout/auth-layout.component";
 
 @Component({
   selector: 'app-register',
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, AuthLayoutComponent],
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
 })

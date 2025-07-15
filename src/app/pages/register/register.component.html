@@ -1,5 +1,4 @@
-<div class="register-container">
-  <h2>إنشاء حساب جديد</h2>
+<ng-template #registerTemplate>
   <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
     <ng-container *ngFor="let field of fields">
       <label *ngIf="!field.hidden">
@@ -31,10 +30,7 @@
             {{ field.label }} مطلوب
           </span>
           <span
-            *ngIf="
-    field.id === 'confirmPassword' &&
-    registerForm.get('confirmPassword')?.touched &&
-    registerForm.get('confirmPassword')?.errors?.['passwordMismatch']
+            *ngIf="field.id === 'confirmPassword' && registerForm.get('confirmPassword')?.touched && registerForm.get('confirmPassword')?.errors?.['passwordMismatch']
   "
           >
             كلمة المرور لا تتطابق
@@ -45,7 +41,7 @@
               registerForm.get(field.id)?.errors?.['invalidPhoneNumber']
             "
           >
-            رقم الهاتف غير صحيح للسعودية
+            رقم الهاتف غير صحيح
           </span>
 
           <span
@@ -62,4 +58,13 @@
 
     <button type="submit" [disabled]="registerForm.invalid">تسجيل</button>
   </form>
-</div>
+  <a href="/login" class="login-link">هل لديك حساب؟</a>
+</ng-template>
+
+<app-auth-layout
+  [title]="'إنشاء حساب جديد'"
+  [activeTab]="'login'"
+  [showTabs]="false"
+  [contentTemplate]="registerTemplate"
+>
+</app-auth-layout>
