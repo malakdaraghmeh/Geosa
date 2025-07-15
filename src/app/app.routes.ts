@@ -6,7 +6,9 @@ import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
+
 
 export const routes: Routes = [
   {
@@ -23,12 +25,15 @@ export const routes: Routes = [
     path: '',
     component: MainLayoutComponent,
     children: [
-      {
-        path: PATHS.HOME,
-        component: HomeComponent,
-        data: { breadcrumb: 'Home' },
-      },
+
+      { path: PATHS.HOME, component: HomeComponent, data: { breadcrumb: 'Home' }},
+      { path: PATHS.PROFILE, component: UserProfileComponent, data: { breadcrumb: 'الملف الشخصي' }},
+    
+    ]
+
+      
     ],
+
   },
 
   { path: PATHS.NOT_FOUND, component: NotFoundPageComponent },

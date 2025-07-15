@@ -124,9 +124,7 @@ body {
     transition: background-color 0.3s;
   }
   
-  button:hover {
-    background-color: #1a73e8; /* أزرق جميل عند المرور */
-  }
+
   
   /* النص أسفل الفورم */
   .note {

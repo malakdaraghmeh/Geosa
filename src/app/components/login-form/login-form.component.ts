@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router'; // ✅ مهم
 import { HttpService } from '../../core/services/api/http.service';
-import { LoginController } from '../../controllers/login.controller';
+import { LoginController } from '../../core/controllers/login.controller';
 
 @Component({
   selector: 'app-login-form',
