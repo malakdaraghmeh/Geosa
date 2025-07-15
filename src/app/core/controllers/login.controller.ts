@@ -1,8 +1,8 @@
-import { LoginResponse } from "../core/models/login-response";
-import { LoginModel } from "../core/models/loginModel/login.model";
-import { HttpService } from "../core/services/api/http.service";
+import { LoginResponse } from "../models/login-response";
+import { LoginModel } from "../models/loginModel/login.model";
+import { HttpService } from "../services/api/http.service";
 import { firstValueFrom } from 'rxjs';
-import { AuthStorage } from "../core/services/auth/auth-storage.service";
+import { AuthStorage } from "../services/auth/auth-storage.service";
 
 export class LoginController {
   constructor(private http: HttpService) {}
