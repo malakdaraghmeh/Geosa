@@ -4,5 +4,6 @@ export const PATHS = {
   HOME: 'home',
   REGISTER: 'register',
   PROFILE: 'profile',  
+  FORGOT_PASSWORD: 'forgot-password',
   NOT_FOUND: '**',
 };
