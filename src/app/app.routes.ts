@@ -1,3 +1,4 @@
+import { AddDeviceComponent } from './pages/add-device/add-device.component';
 import { Routes } from '@angular/router';
 import { PATHS } from './core/utils/paths';
 import { LoginComponent } from './pages/login/login.component';
@@ -28,7 +29,8 @@ export const routes: Routes = [
 
       { path: PATHS.HOME, component: HomeComponent, data: { breadcrumb: 'Home' }},
       { path: PATHS.PROFILE, component: UserProfileComponent, data: { breadcrumb: 'الملف الشخصي' }},
-    
+          { path: PATHS.ADD_DEVICE, component: AddDeviceComponent, data: { breadcrumb: ' add device' }},
+
     ]
 
       
