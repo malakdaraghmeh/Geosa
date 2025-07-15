@@ -3,5 +3,6 @@ export const PATHS = {
   LOGIN: 'login',
   HOME: 'home',
   REGISTER: 'register',
+  PROFILE: 'profile',  
   NOT_FOUND: '**',
 };
