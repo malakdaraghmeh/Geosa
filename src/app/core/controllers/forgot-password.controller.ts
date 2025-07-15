@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpService } from '../services/http.service';
+import { HttpService } from '../services/api/http.service';
 import { ForgotPasswordModel } from '../models/forgot-password.model';
 
 @Injectable({ providedIn: 'root' })
